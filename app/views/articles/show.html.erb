@@ -1,0 +1,33 @@
+<nav class="navbar navbar-default list-inline" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Wikinimous</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><%= link_to "New article", new_article_path %></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <h1><%= @article.title %></h1>
+      <small>
+        <%= link_to edit_article_path(@article) do %>
+          <i class="fa fa-pencil"></i>
+        <% end %>
+        <%= link_to article_path(@article), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <%end%>
+      </small>
+      <hr>
+      <p><%= @article.content %></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<%= link_to "Go home", root_path %>
